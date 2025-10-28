@@ -1,0 +1,102 @@
+/* main.css */
+@import "tailwindcss";
+
+/* Define root variables for light and dark mode */
+:root {
+  --font-size: 16px;
+
+  /* Colors */
+  --background: #ffffff;
+  --foreground: #363636;
+  --card: #ffffff;
+  --card-foreground: #363636;
+  --popover: #ffffff;
+  --popover-foreground: #363636;
+  --primary: #1e3a8a;
+  --primary-foreground: #ffffff;
+  --secondary: #64748b;
+  --secondary-foreground: #ffffff;
+  --muted: #f3f4f6;
+  --muted-foreground: #4b5563;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #d1d5db;
+  --input: #d1d5db;
+  --input-background: #f9fafb;
+  --switch-background: #e5e7eb;
+  --ring: #4b5563;
+  --radius: 0.625rem;
+
+  /* Chart colors */
+  --chart-1: #31c48d;
+  --chart-2: #3b82f6;
+  --chart-3: #facc15;
+  --chart-4: #f472b6;
+  --chart-5: #6366f1;
+}
+
+/* Dark mode overrides */
+.dark {
+  --background: #121212;
+  --foreground: #f9fafb;
+  --card: #1f1f1f;
+  --card-foreground: #f9fafb;
+  --popover: #1f1f1f;
+  --popover-foreground: #f9fafb;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #6b7280;
+  --secondary-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #d1d5db;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #4b5563;
+  --input: #4b5563;
+  --ring: #f9fafb;
+}
+
+/* Base layer styles */
+@layer base {
+  html {
+    font-size: var(--font-size);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: var(--font-size);
+    line-height: 1.5;
+  }
+
+  /* Borders using CSS variable */
+  * {
+    border-color: var(--border);
+  }
+
+  /* Headings */
+  h1 { font-size: 2.25rem; font-weight: 500; }
+  h2 { font-size: 1.875rem; font-weight: 500; }
+  h3 { font-size: 1.5rem; font-weight: 500; }
+  h4 { font-size: 1.25rem; font-weight: 500; }
+
+  /* Text */
+  p, input, label, button {
+    font-size: 1rem;
+  }
+
+  p { font-weight: 400; }
+  label, button { font-weight: 500; }
+  input { font-weight: 400; }
+}
+
+/* Custom utilities if needed */
+@layer utilities {
+  .bg-background { background-color: var(--background); }
+  .text-foreground { color: var(--foreground); }
+  .rounded-card { border-radius: var(--radius); }
+}

@@ -53,7 +53,7 @@ export function SchedulePage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-white text-2xl mb-2 font-espn">Schedule</h1>
+          <h1 className="text-white text-5xl mb-2 ">Schedule</h1>
           <p className="text-slate-400 text-2xl">Manage and view all scheduled games</p>
         </div>
         <Dialog>

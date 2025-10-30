@@ -45,8 +45,8 @@ export function AnalyticsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-white text-3xl mb-2">Analytics & Insights</h1>
-        <p className="text-slate-400">Track performance and trends across your league</p>
+        <h1 className="text-white text-5xl mb-2">Analytics & Insights</h1>
+        <p className="text-slate-400 text-2xl">Track performance and trends across your league</p>
       </div>
 
       {/* Insight Cards */}
@@ -58,7 +58,7 @@ export function AnalyticsPage() {
               <CardContent className="p-6">
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-slate-400 text-sm">{insight.title}</p>
+                    <p className="text-slate-400 text-xl">{insight.title}</p>
                     <p className="text-white text-3xl mt-2">{insight.value}</p>
                     <p className="text-slate-500 text-sm mt-2">{insight.subtitle}</p>
                   </div>
@@ -76,7 +76,7 @@ export function AnalyticsPage() {
         {/* Games Per Week */}
         <Card className="bg-slate-900/50 border-slate-800 backdrop-blur">
           <CardHeader>
-            <CardTitle className="text-white">Games Scheduled Per Week</CardTitle>
+            <CardTitle className="text-white text-2xl">Games Scheduled Per Week</CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -101,7 +101,7 @@ export function AnalyticsPage() {
         {/* Attendance Trend */}
         <Card className="bg-slate-900/50 border-slate-800 backdrop-blur">
           <CardHeader>
-            <CardTitle className="text-white">Attendance Trend (%)</CardTitle>
+            <CardTitle className="text-white text-2xl">Attendance Trend (%)</CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -128,7 +128,7 @@ export function AnalyticsPage() {
         {/* Sport Distribution */}
         <Card className="bg-slate-900/50 border-slate-800 backdrop-blur">
           <CardHeader>
-            <CardTitle className="text-white">Games by Sport</CardTitle>
+            <CardTitle className="text-white text-2xl">Games by Sport</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-center">
@@ -163,7 +163,7 @@ export function AnalyticsPage() {
               {sportDistribution.map((sport) => (
                 <div key={sport.name} className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full" style={{ backgroundColor: sport.color }} />
-                  <span className="text-slate-300 text-sm">{sport.name}</span>
+                  <span className="text-slate-300 text-xl">{sport.name}</span>
                 </div>
               ))}
             </div>
@@ -173,7 +173,7 @@ export function AnalyticsPage() {
         {/* Team Performance */}
         <Card className="bg-slate-900/50 border-slate-800 backdrop-blur">
           <CardHeader>
-            <CardTitle className="text-white">Top Team Performance</CardTitle>
+            <CardTitle className="text-white text-2xl">Top Team Performance</CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>

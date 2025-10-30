@@ -1,10 +1,31 @@
 /* main.css */
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'ESPN';
+  src: url('./assets/fonts/Espn/esp_ital.ttf') format('truetype'); 
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Action NBA Cond Web';
+    src: url('./assets/fonts/action-nba/ActionNBACondWeb-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Define root variables for light and dark mode */
 :root {
   --font-size: 16px;
+  --font-size2: 20px;
 
+  /* Fonts */
+  --font-primary:  'Action NBA Cond Web', sans-serif;
+  --font-espn: 'ESPN';
   /* Colors */
   --background: #ffffff;
   --foreground: #363636;
@@ -63,14 +84,15 @@
 /* Base layer styles */
 @layer base {
   html {
-    font-size: var(--font-size);
+    font-size: var(--font-size2);
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
     font-size: var(--font-size);
-    line-height: 1.5;
+    line-height: 1;
+    font-family: var(--font-primary)
   }
 
   /* Borders using CSS variable */
@@ -79,7 +101,8 @@
   }
 
   /* Headings */
-  h1 { font-size: 2.25rem; font-weight: 500; }
+
+  h1 { font-size: 2.25rem; font-weight: 500;  }
   h2 { font-size: 1.875rem; font-weight: 500; }
   h3 { font-size: 1.5rem; font-weight: 500; }
   h4 { font-size: 1.25rem; font-weight: 500; }
@@ -98,5 +121,8 @@
 @layer utilities {
   .bg-background { background-color: var(--background); }
   .text-foreground { color: var(--foreground); }
+  .font-espn{
+    font-family: 'ESPN', sans-serif;
+  }
   .rounded-card { border-radius: var(--radius); }
 }

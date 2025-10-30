@@ -26,8 +26,8 @@ export function LoginPage({ onLogin, onSwitchToSignup }: LoginPageProps) {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-600 rounded-2xl mb-4">
             <Trophy className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-white text-3xl mb-2">IskoArena</h1>
-          <p className="text-slate-300">Manage Iskolaro games with ease</p>
+          <h1 className="text-white text-3xl mb-2 font-espn">IskoArena</h1>
+          <p className="text-slate-300 font-espn">Manage Iskolaro games with ease</p>
         </div>
 
         <Card className="border-slate-700 bg-slate-800/50 backdrop-blur">

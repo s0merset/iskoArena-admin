@@ -1,0 +1,299 @@
+@font-face {
+    font-family: 'Action NBA Condensed';
+    src: url('ActionNBACondensed-Medium.eot');
+    src: local('Action NBA Condensed Medium'), local('ActionNBACondensed-Medium'),
+        url('ActionNBACondensed-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondensed-Medium.woff2') format('woff2'),
+        url('ActionNBACondensed-Medium.woff') format('woff'),
+        url('ActionNBACondensed-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Condensed';
+    src: url('ActionNBACondensed-MediumItalic.eot');
+    src: local('Action NBA Condensed Medium Italic'), local('ActionNBACondensed-MediumItalic'),
+        url('ActionNBACondensed-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondensed-MediumItalic.woff2') format('woff2'),
+        url('ActionNBACondensed-MediumItalic.woff') format('woff'),
+        url('ActionNBACondensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Condensed';
+    src: url('ActionNBACondensed-LightItalic.eot');
+    src: local('Action NBA Condensed Light Italic'), local('ActionNBACondensed-LightItalic'),
+        url('ActionNBACondensed-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondensed-LightItalic.woff2') format('woff2'),
+        url('ActionNBACondensed-LightItalic.woff') format('woff'),
+        url('ActionNBACondensed-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Cond Web';
+    src: url('ActionNBACondWeb-Medium.eot');
+    src: local('Action NBA Cond Web Medium'), local('ActionNBACondWeb-Medium'),
+        url('ActionNBACondWeb-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondWeb-Medium.woff2') format('woff2'),
+        url('ActionNBACondWeb-Medium.woff') format('woff'),
+        url('ActionNBACondWeb-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Cond Web';
+    src: url('ActionNBACondWeb-Bold.eot');
+    src: local('Action NBA Cond Web Bold'), local('ActionNBACondWeb-Bold'),
+        url('ActionNBACondWeb-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondWeb-Bold.woff2') format('woff2'),
+        url('ActionNBACondWeb-Bold.woff') format('woff'),
+        url('ActionNBACondWeb-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Condensed';
+    src: url('ActionNBACondensed-Light.eot');
+    src: local('Action NBA Condensed Light'), local('ActionNBACondensed-Light'),
+        url('ActionNBACondensed-Light.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondensed-Light.woff2') format('woff2'),
+        url('ActionNBACondensed-Light.woff') format('woff'),
+        url('ActionNBACondensed-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Cond Web';
+    src: url('ActionNBACondWeb-BoldItalic.eot');
+    src: local('Action NBA Cond Web Bold Italic'), local('ActionNBACondWeb-BoldItalic'),
+        url('ActionNBACondWeb-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondWeb-BoldItalic.woff2') format('woff2'),
+        url('ActionNBACondWeb-BoldItalic.woff') format('woff'),
+        url('ActionNBACondWeb-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA';
+    src: url('ActionNBA-Bold.eot');
+    src: local('Action NBA Bold'), local('ActionNBA-Bold'),
+        url('ActionNBA-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBA-Bold.woff2') format('woff2'),
+        url('ActionNBA-Bold.woff') format('woff'),
+        url('ActionNBA-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA';
+    src: url('ActionNBA-Light.eot');
+    src: local('Action NBA Light'), local('ActionNBA-Light'),
+        url('ActionNBA-Light.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBA-Light.woff2') format('woff2'),
+        url('ActionNBA-Light.woff') format('woff'),
+        url('ActionNBA-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA';
+    src: url('ActionNBA-BoldItalic.eot');
+    src: local('Action NBA Bold Italic'), local('ActionNBA-BoldItalic'),
+        url('ActionNBA-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBA-BoldItalic.woff2') format('woff2'),
+        url('ActionNBA-BoldItalic.woff') format('woff'),
+        url('ActionNBA-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Cond Web';
+    src: url('ActionNBACondWeb-LightItalic.eot');
+    src: local('Action NBA Cond Web Light Italic'), local('ActionNBACondWeb-LightItalic'),
+        url('ActionNBACondWeb-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondWeb-LightItalic.woff2') format('woff2'),
+        url('ActionNBACondWeb-LightItalic.woff') format('woff'),
+        url('ActionNBACondWeb-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Cond Web';
+    src: url('ActionNBACondWeb-MediumItalic.eot');
+    src: local('Action NBA Cond Web Medium Italic'), local('ActionNBACondWeb-MediumItalic'),
+        url('ActionNBACondWeb-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondWeb-MediumItalic.woff2') format('woff2'),
+        url('ActionNBACondWeb-MediumItalic.woff') format('woff'),
+        url('ActionNBACondWeb-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Condensed';
+    src: url('ActionNBACondensed-Bold.eot');
+    src: local('Action NBA Condensed Bold'), local('ActionNBACondensed-Bold'),
+        url('ActionNBACondensed-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondensed-Bold.woff2') format('woff2'),
+        url('ActionNBACondensed-Bold.woff') format('woff'),
+        url('ActionNBACondensed-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA';
+    src: url('ActionNBA-LightItalic.eot');
+    src: local('Action NBA Light Italic'), local('ActionNBA-LightItalic'),
+        url('ActionNBA-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBA-LightItalic.woff2') format('woff2'),
+        url('ActionNBA-LightItalic.woff') format('woff'),
+        url('ActionNBA-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Condensed';
+    src: url('ActionNBACondensed-BoldItalic.eot');
+    src: local('Action NBA Condensed Bold Italic'), local('ActionNBACondensed-BoldItalic'),
+        url('ActionNBACondensed-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondensed-BoldItalic.woff2') format('woff2'),
+        url('ActionNBACondensed-BoldItalic.woff') format('woff'),
+        url('ActionNBACondensed-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Cond Web';
+    src: url('ActionNBACondWeb-Light.eot');
+    src: local('Action NBA Cond Web Light'), local('ActionNBACondWeb-Light'),
+        url('ActionNBACondWeb-Light.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBACondWeb-Light.woff2') format('woff2'),
+        url('ActionNBACondWeb-Light.woff') format('woff'),
+        url('ActionNBACondWeb-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA';
+    src: url('ActionNBA-Medium.eot');
+    src: local('Action NBA Medium'), local('ActionNBA-Medium'),
+        url('ActionNBA-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBA-Medium.woff2') format('woff2'),
+        url('ActionNBA-Medium.woff') format('woff'),
+        url('ActionNBA-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Web';
+    src: url('ActionNBAWeb-Medium.eot');
+    src: local('Action NBA Web Medium'), local('ActionNBAWeb-Medium'),
+        url('ActionNBAWeb-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBAWeb-Medium.woff2') format('woff2'),
+        url('ActionNBAWeb-Medium.woff') format('woff'),
+        url('ActionNBAWeb-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Web';
+    src: url('ActionNBAWeb-BoldItalic.eot');
+    src: local('Action NBA Web Bold Italic'), local('ActionNBAWeb-BoldItalic'),
+        url('ActionNBAWeb-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBAWeb-BoldItalic.woff2') format('woff2'),
+        url('ActionNBAWeb-BoldItalic.woff') format('woff'),
+        url('ActionNBAWeb-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA';
+    src: url('ActionNBA-MediumItalic.eot');
+    src: local('Action NBA Medium Italic'), local('ActionNBA-MediumItalic'),
+        url('ActionNBA-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBA-MediumItalic.woff2') format('woff2'),
+        url('ActionNBA-MediumItalic.woff') format('woff'),
+        url('ActionNBA-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Web';
+    src: url('ActionNBAWeb-LightItalic.eot');
+    src: local('Action NBA Web Light Italic'), local('ActionNBAWeb-LightItalic'),
+        url('ActionNBAWeb-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBAWeb-LightItalic.woff2') format('woff2'),
+        url('ActionNBAWeb-LightItalic.woff') format('woff'),
+        url('ActionNBAWeb-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Web';
+    src: url('ActionNBAWeb-Light.eot');
+    src: local('Action NBA Web Light'), local('ActionNBAWeb-Light'),
+        url('ActionNBAWeb-Light.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBAWeb-Light.woff2') format('woff2'),
+        url('ActionNBAWeb-Light.woff') format('woff'),
+        url('ActionNBAWeb-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Action NBA Web';
+    src: url('ActionNBAWeb-Bold.eot');
+    src: local('Action NBA Web Bold'), local('ActionNBAWeb-Bold'),
+        url('ActionNBAWeb-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ActionNBAWeb-Bold.woff2') format('woff2'),
+        url('ActionNBAWeb-Bold.woff') format('woff'),
+        url('ActionNBAWeb-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

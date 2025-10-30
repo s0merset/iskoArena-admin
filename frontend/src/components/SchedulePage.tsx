@@ -53,8 +53,8 @@ export function SchedulePage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-white text-3xl mb-2">Schedule</h1>
-          <p className="text-slate-400">Manage and view all scheduled games</p>
+          <h1 className="text-white text-2xl mb-2 font-espn">Schedule</h1>
+          <p className="text-slate-400 text-2xl">Manage and view all scheduled games</p>
         </div>
         <Dialog>
           <DialogTrigger asChild>
@@ -127,7 +127,7 @@ export function SchedulePage() {
               <CardHeader>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-5 h-5 text-purple-500" />
-                  <CardTitle className="text-white">{formatDate(date)}</CardTitle>
+                  <CardTitle className="text-white text-2xl">{formatDate(date)}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -135,21 +135,21 @@ export function SchedulePage() {
                   <div key={game.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-800/50 rounded-lg gap-3">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-white">{game.team1}</span>
-                        <span className="text-slate-500">vs</span>
-                        <span className="text-white">{game.team2}</span>
+                        <span className="text-white text-2xl">{game.team1}</span>
+                        <span className="text-slate-500 text-2xl">vs</span>
+                        <span className="text-white text-2xl">{game.team2}</span>
                       </div>
                       <div className="flex items-center gap-4 text-sm">
-                        <span className="text-slate-400">{game.time}</span>
-                        <span className="text-slate-400">•</span>
-                        <span className="text-slate-400">{game.venue}</span>
+                        <span className="text-slate-400 text-xl">{game.time}</span>
+                        <span className="text-slate-400 text-xl">•</span>
+                        <span className="text-slate-400 text-xl">{game.venue}</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="text-slate-300 border-slate-600">
+                      <Badge variant="outline" className="text-slate-300 border-slate-600 text-2xl">
                         {game.sport}
                       </Badge>
-                      <Button variant="outline" size="sm" className="border-slate-700 text-slate-300 hover:text-white">
+                      <Button variant="outline" size="sm" className="border-slate-700 text-slate-300 text-2xl hover:text-white">
                         Edit
                       </Button>
                     </div>

@@ -66,8 +66,8 @@ export function Layout({ children, currentPage, onNavigate, onLogout }: LayoutPr
               <Trophy className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-white">IskoArena</h1>
-              <p className="text-slate-400 text-sm">Manager</p>
+              <h1 className="text-white text-2xl font-espn">IskoArena</h1>
+              <p className="text-slate-400 text-base font-espn">Manager</p>
             </div>
           </div>
         </div>

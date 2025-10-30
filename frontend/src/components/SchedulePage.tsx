@@ -114,13 +114,32 @@ export function SchedulePage() {
       </div>
 
       <Tabs value={selectedSport} onValueChange={setSelectedSport}>
-        <TabsList className="bg-slate-900 border border-slate-800">
-          <TabsTrigger value="all">All Sports</TabsTrigger>
-          <TabsTrigger value="Basketball">Basketball</TabsTrigger>
-          <TabsTrigger value="Volleyball">Volleyball</TabsTrigger>
-          <TabsTrigger value="Football">Football</TabsTrigger>
-        </TabsList>
-
+	<TabsList className="bg-slate-900 border border-slate-800 p-1 rounded-lg flex gap-2">
+	    <TabsTrigger
+	    value="all"
+	    className="text-xl cursor-pointer px-4 py-2 rounded-md data-[state=active]:bg-white data-[state=active]:text-slate-900 transition"
+	    >
+	    All Sports
+	    </TabsTrigger>
+	    <TabsTrigger
+	    value="Basketball"
+	    className="text-xl cursor-pointer px-4 py-2 rounded-md data-[state=active]:bg-white data-[state=active]:text-slate-900 transition"
+	    >
+	    Basketball
+	    </TabsTrigger>
+	    <TabsTrigger
+	    value="Volleyball"
+	    className="text-xl cursor-pointer px-4 py-2 rounded-md data-[state=active]:bg-white data-[state=active]:text-slate-900 transition"
+	    >
+	    Volleyball
+	    </TabsTrigger>
+	    <TabsTrigger
+	    value="Football"
+	    className="text-xl cursor-pointer px-4 py-2 rounded-md data-[state=active]:bg-white data-[state=active]:text-slate-900 transition"
+	    >
+	    Football
+	    </TabsTrigger>
+	 </TabsList>
         <TabsContent value={selectedSport} className="space-y-6 mt-6">
           {Object.entries(groupedSchedule).map(([date, games]) => (
             <Card key={date} className="bg-slate-900/50 border-slate-800 backdrop-blur">
@@ -135,9 +154,9 @@ export function SchedulePage() {
                   <div key={game.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-800/50 rounded-lg gap-3">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-white text-2xl">{game.team1}</span>
-                        <span className="text-slate-500 text-2xl">vs</span>
-                        <span className="text-white text-2xl">{game.team2}</span>
+                        <span className="text-white text-xl">{game.team1}</span>
+                        <span className="text-slate-500 text-xl">vs</span>
+                        <span className="text-white text-xl">{game.team2}</span>
                       </div>
                       <div className="flex items-center gap-4 text-sm">
                         <span className="text-slate-400 text-xl">{game.time}</span>
@@ -146,10 +165,10 @@ export function SchedulePage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="text-slate-300 border-slate-600 text-2xl">
+                      <Badge variant="outline" className="text-slate-300 border-slate-600 text-xl">
                         {game.sport}
                       </Badge>
-                      <Button variant="outline" size="sm" className="border-slate-700 text-slate-300 text-2xl hover:text-white">
+                      <Button variant="outline" size="sm" className="border-slate-700 text-slate-300 text-xl hover:text-white">
                         Edit
                       </Button>
                     </div>

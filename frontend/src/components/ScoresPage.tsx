@@ -30,19 +30,19 @@ export function ScoresPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-white text-3xl mb-2">Scores & Results</h1>
-        <p className="text-slate-400">Live updates and game results</p>
+        <h1 className="text-white text-2xl mb-2 font-espn">Scores & Results</h1>
+        <p className="text-slate-400 text-2xl">Live updates and game results</p>
       </div>
 
       <Tabs value={selectedTab} onValueChange={setSelectedTab}>
         <TabsList className="bg-slate-900 border border-slate-800">
-          <TabsTrigger value="live" className="flex items-center gap-2">
+          <TabsTrigger value="live" className="flex items-center text-xl gap-2 data-[state=active]:bg-white data-[state=active]:text-slate-900 transition cursor-pointer">
             <Radio className="w-4 h-4" />
             Live
-            <Badge className="bg-red-600 hover:bg-red-700 ml-1">{liveGames.length}</Badge>
+            <Badge className="bg-red-600 hover:bg-red-700 ml-1 w-7">{liveGames.length}</Badge>
           </TabsTrigger>
-          <TabsTrigger value="recent">Recent</TabsTrigger>
-          <TabsTrigger value="upcoming">Upcoming</TabsTrigger>
+          <TabsTrigger value="recent" className="flex items-center text-xl gap-2 data-[state=active]:bg-white data-[state=active]:text-slate-900 transition cursor-pointer">Recent</TabsTrigger>
+          <TabsTrigger value="upcoming" className="flex items-center text-xl gap-2 data-[state=active]:bg-white data-[state=active]:text-slate-900 transition cursor-pointer">Upcoming</TabsTrigger>
         </TabsList>
 
         <TabsContent value="live" className="space-y-4 mt-6">
@@ -50,27 +50,27 @@ export function ScoresPage() {
             <Card key={game.id} className="bg-slate-900/50 border-slate-800 backdrop-blur border-l-4 border-l-red-500">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <Badge className="bg-red-600 hover:bg-red-700 flex items-center gap-1">
-                    <Radio className="w-3 h-3" />
+                  <Badge className="bg-red-600 cursor-pointer text-lg hover:bg-red-700 flex items-center gap-1 w-15 h-7">
+                    <Radio className="w-5 h-5" />
                     LIVE
                   </Badge>
                   <div className="flex items-center gap-3">
-                    <Badge variant="outline" className="text-slate-300 border-slate-600">
+                    <Badge variant="outline" className="text-slate-300 text-xl border-slate-600">
                       {game.sport}
                     </Badge>
-                    <span className="text-slate-400">{game.quarter || game.set}</span>
-                    <span className="text-purple-400">{game.timeLeft}</span>
+                    <span className="text-slate-400 text-xl">{game.quarter || game.set}</span>
+                    <span className="text-purple-400 text-xl">{game.timeLeft}</span>
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <p className="text-slate-400 text-sm">Home</p>
-                    <p className="text-white text-2xl">{game.team1}</p>
+                    <p className="text-slate-400 text-4xl">Home</p>
+                    <p className="text-white text-3xl">{game.team1}</p>
                   </div>
                   <div className="space-y-2">
-                    <p className="text-slate-400 text-sm">Away</p>
-                    <p className="text-white text-2xl">{game.team2}</p>
+                    <p className="text-slate-400 text-4xl">Away</p>
+                    <p className="text-white text-3xl">{game.team2}</p>
                   </div>
                 </div>
 
@@ -80,11 +80,11 @@ export function ScoresPage() {
                 </div>
 
                 <div className="mt-4 flex gap-2">
-                  <Button variant="outline" size="sm" className="border-slate-700 text-slate-300 hover:text-white">
-                    <Edit className="w-4 h-4 mr-2" />
+                  <Button variant="outline" size="sm" className="border-slate-700 cursor-pointer text-slate-500 hover:text-slate-300 text-lg">
+                    <Edit className="w-5 h-5 mr-2" />
                     Update Score
                   </Button>
-                  <Button variant="outline" size="sm" className="border-slate-700 text-slate-300 hover:text-white">
+                  <Button variant="outline" size="sm" className="border-slate-700 cursor-pointer text-slate-500 hover:text-slate-300 text-lg">
                     View Details
                   </Button>
                 </div>

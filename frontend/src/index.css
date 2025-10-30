@@ -85,6 +85,9 @@
 @layer base {
   html {
     font-size: var(--font-size2);
+    /* Prevent browser rubber-band overdrag from revealing white background */
+    overscroll-behavior: none;
+    background-color: var(--background);
   }
 
   body {
@@ -92,7 +95,15 @@
     color: var(--foreground);
     font-size: var(--font-size);
     line-height: 1;
-    font-family: var(--font-primary)
+    font-family: var(--font-primary);
+    /* Contain scroll chaining to avoid white flash during overdrag */
+    overscroll-behavior: none;
+  }
+
+  /* Ensure the app root always paints the background during edge swipes */
+  #root, #app, #__next {
+    background-color: var(--background);
+    min-height: 100dvh;
   }
 
   /* Borders using CSS variable */

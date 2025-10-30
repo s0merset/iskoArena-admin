@@ -29,7 +29,7 @@ export function Dashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-white text-2xl mb-2 font-espn">Dashboard</h1>
+        <h1 className="text-white text-5xl mb-2">Dashboard</h1>
         <p className="text-slate-400 text-2xl">Welcome back! Here's what's happening today.</p>
       </div>
 

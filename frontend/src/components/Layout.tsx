@@ -67,7 +67,7 @@ export function Layout({ children, currentPage, onNavigate, onLogout }: LayoutPr
             </div>
             <div>
               <h1 className="text-white text-2xl font-espn">IskoArena</h1>
-              <p className="text-slate-400 text-base font-espn">Manager</p>
+              <p className="text-slate-400 text-2xl">Manager</p>
             </div>
           </div>
         </div>

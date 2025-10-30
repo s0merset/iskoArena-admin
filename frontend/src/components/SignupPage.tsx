@@ -36,68 +36,69 @@ export function SignupPage({ onSignup, onSwitchToLogin }: SignupPageProps) {
 
         <Card className="border-slate-700 bg-slate-800/50 backdrop-blur">
           <CardHeader>
-            <CardTitle className="text-white">Create Account</CardTitle>
-            <CardDescription className="text-slate-400">Sign up to get started</CardDescription>
+            <CardTitle className="text-white text-4xl">Create Account</CardTitle>
+            <CardDescription className="text-slate-400 text-3xl">Sign up to get started</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-slate-200">Full Name</Label>
+                <Label htmlFor="name" className="text-slate-200 text-2xl">Full Name</Label>
                 <Input
                   id="name"
                   type="text"
                   placeholder="John Doe"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+                  className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500 h-10"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-slate-200">Email</Label>
+                <Label htmlFor="email" className="text-slate-200 text-2xl">Email</Label>
                 <Input
                   id="email"
                   type="email"
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+                  className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500 h-10"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-slate-200">Password</Label>
+                <Label htmlFor="password" className="text-slate-200 text-2xl">Password</Label>
                 <Input
                   id="password"
                   type="password"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+                  className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500 h-10
+				    "
                   required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword" className="text-slate-200">Confirm Password</Label>
+                <Label htmlFor="confirmPassword" className="text-slate-200 text-2xl">Confirm Password</Label>
                 <Input
                   id="confirmPassword"
                   type="password"
                   placeholder="••••••••"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+                  className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500 h-10"
                   required
                 />
               </div>
-              <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">
+              <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 h-10 text-xl cursor-pointer">
                 Create Account
               </Button>
             </form>
             <div className="mt-4 text-center">
-              <span className="text-slate-400">Already have an account? </span>
+              <span className="text-slate-400 text-2xl">Already have an account? </span>
               <button
                 onClick={onSwitchToLogin}
-                className="text-purple-400 hover:text-purple-300"
+                className="text-purple-400 hover:text-purple-300 text-2xl cursor-pointer"
               >
                 Sign in
               </button>

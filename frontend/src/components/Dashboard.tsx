@@ -42,8 +42,8 @@ export function Dashboard() {
               <CardContent className="p-6">
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-slate-400 text-2xl">{kpi.title}</p>
-                    <p className="text-white text-xl mt-1">{kpi.value}</p>
+                    <p className="text-slate-400 text-xl">{kpi.title}</p>
+                    <p className="text-white text-3xl mt-1">{kpi.value}</p>
                     <p className="text-green-500 text-xl mt-1">{kpi.change}</p>
                   </div>
                   <div className={`p-3 bg-slate-800 rounded-lg ${kpi.color}`}>

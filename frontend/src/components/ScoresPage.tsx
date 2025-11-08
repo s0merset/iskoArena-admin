@@ -4,6 +4,8 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Radio, Edit, CheckCircle } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
+import { Input } from './ui/input';
 
 const liveGames = [
   { id: 1, team1: 'SocSci Stallions', score1: 78, team2: 'Golden Scions', score2: 72, sport: 'Basketball', quarter: 'Q4', timeLeft: '5:32' },
@@ -26,6 +28,36 @@ const upcomingGames = [
 
 export function ScoresPage() {
   const [selectedTab, setSelectedTab] = useState('live');
+  const [isUpdateScoreOpen, setIsUpdateScoreOpen] = useState(false);
+  const [selectedGame, setSelectedGame] = useState(null);
+  const [score1, setScore1] = useState('');
+  const [score2, setScore2] = useState('');
+
+  const handleUpdateScore = (game) => {
+    setSelectedGame(game);
+    setScore1(game.score1.toString());
+    setScore2(game.score2.toString());
+    setIsUpdateScoreOpen(true);
+  };
+
+  const handleSaveScore = () => {
+    if (selectedGame) {
+      // Here you would typically make an API call to update the score
+      const updatedGames = liveGames.map(game => {
+        if (game.id === selectedGame.id) {
+          return {
+            ...game,
+            score1: parseInt(score1),
+            score2: parseInt(score2)
+          };
+        }
+        return game;
+      });
+      // Update the state (in a real app, this would be handled by your state management solution)
+      liveGames.splice(0, liveGames.length, ...updatedGames);
+    }
+    setIsUpdateScoreOpen(false);
+  };
 
   return (
     <div className="space-y-6">
@@ -80,7 +112,12 @@ export function ScoresPage() {
                 </div>
 
                 <div className="mt-4 flex gap-2">
-                  <Button variant="outline" size="sm" className="border-slate-700 cursor-pointer text-slate-500 hover:text-slate-300 text-lg">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="border-slate-700 cursor-pointer text-slate-500 hover:text-slate-300 text-lg"
+                    onClick={() => handleUpdateScore(game)}
+                  >
                     <Edit className="w-5 h-5 mr-2" />
                     Update Score
                   </Button>
@@ -155,6 +192,51 @@ export function ScoresPage() {
           ))}
         </TabsContent>
       </Tabs>
+
+      <Dialog open={isUpdateScoreOpen} onOpenChange={setIsUpdateScoreOpen}>
+        <DialogContent className="bg-slate-900 border-slate-800 text-white">
+          <DialogHeader>
+            <DialogTitle>Update Score</DialogTitle>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <span className="text-slate-400">{selectedGame?.team1}</span>
+              <Input
+                id="score1"
+                value={score1}
+                onChange={(e) => setScore1(e.target.value)}
+                className="col-span-3 bg-slate-800 border-slate-700 text-white"
+                type="number"
+              />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <span className="text-slate-400">{selectedGame?.team2}</span>
+              <Input
+                id="score2"
+                value={score2}
+                onChange={(e) => setScore2(e.target.value)}
+                className="col-span-3 bg-slate-800 border-slate-700 text-white"
+                type="number"
+              />
+            </div>
+          </div>
+          <div className="flex justify-end gap-3">
+            <Button
+              variant="outline"
+              onClick={() => setIsUpdateScoreOpen(false)}
+              className="border-slate-700 text-slate-300"
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={handleSaveScore}
+              className="bg-purple-600 text-white hover:bg-purple-700"
+            >
+              Save changes
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

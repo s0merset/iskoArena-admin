@@ -6,6 +6,7 @@ import { SchedulePage } from './components/SchedulePage';
 import { ScoresPage } from './components/ScoresPage';
 import { StandingsPage } from './components/StandingsPage';
 import { AnalyticsPage } from './components/AnalyticsPage';
+import { TeamsAndPlayers } from './components/TeamsPage';
 import { Layout } from './components/Layout';
 
 export default function App() {
@@ -46,6 +47,8 @@ export default function App() {
         return <StandingsPage />;
       case 'analytics':
         return <AnalyticsPage />;
+      case 'teams':
+	return <TeamsAndPlayers />;
       default:
         return <Dashboard />;
     }

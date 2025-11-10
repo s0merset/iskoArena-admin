@@ -6,7 +6,8 @@ import {
   BarChart3, 
   Medal,
   LogOut,
-  Menu
+  Menu,
+  Users
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
@@ -25,6 +26,7 @@ const navItems = [
   { id: 'scores', label: 'Scores', icon: Trophy },
   { id: 'standings', label: 'Standings', icon: Medal },
   { id: 'analytics', label: 'Analytics', icon: BarChart3 },
+  { id: 'teams', label: 'Teams and Players', icon: Users},
 ];
 
 export function Layout({ children, currentPage, onNavigate, onLogout }: LayoutProps) {

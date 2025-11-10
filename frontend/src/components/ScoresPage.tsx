@@ -74,7 +74,6 @@ export function ScoresPage() {
             <Badge className="bg-red-600 hover:bg-red-700 ml-1 w-7">{liveGames.length}</Badge>
           </TabsTrigger>
           <TabsTrigger value="recent" className="flex items-center text-xl gap-2 data-[state=active]:bg-white data-[state=active]:text-slate-900 transition cursor-pointer">Recent</TabsTrigger>
-          <TabsTrigger value="upcoming" className="flex items-center text-xl gap-2 data-[state=active]:bg-white data-[state=active]:text-slate-900 transition cursor-pointer">Upcoming</TabsTrigger>
         </TabsList>
 
         <TabsContent value="live" className="space-y-4 mt-6">
@@ -162,32 +161,6 @@ export function ScoresPage() {
           ))}
         </TabsContent>
 
-        <TabsContent value="upcoming" className="space-y-4 mt-6">
-          {upcomingGames.map((game) => (
-            <Card key={game.id} className="bg-slate-900/50 border-slate-800 backdrop-blur">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-white text-2xl">{game.team1}</span>
-                      <span className="text-slate-500 text-2xl">vs</span>
-                      <span className="text-white text-2xl">{game.team2}</span>
-                    </div>
-                    <p className="text-slate-400 text-xl">{game.time}</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Badge variant="outline" className="text-slate-300 text-xl border-slate-600">
-                      {game.sport}
-                    </Badge>
-                    <Button variant="outline" size="sm" className="border-slate-700 text-xl text-slate-300 hover:text-white">
-                      View Details
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </TabsContent>
       </Tabs>
 
       <Dialog open={isUpdateScoreOpen} onOpenChange={setIsUpdateScoreOpen}>

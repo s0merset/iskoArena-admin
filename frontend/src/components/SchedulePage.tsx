@@ -58,7 +58,7 @@ export function SchedulePage() {
         </div>
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="bg-purple-600 hover:bg-purple-700">
+            <Button className="bg-purple-600 cursor-pointer hover:bg-purple-700">
               <Plus className="w-4 h-4 mr-2" />
               Add Game
             </Button>
@@ -105,7 +105,7 @@ export function SchedulePage() {
                 <Label>Venue</Label>
                 <Input className="bg-slate-800 border-slate-700" placeholder="Enter venue" />
               </div>
-              <Button className="w-full bg-purple-600 hover:bg-purple-700">
+              <Button className="w-full bg-purple-600 cursor-pointer hover:bg-purple-700">
                 Schedule Game
               </Button>
             </div>
@@ -168,10 +168,63 @@ export function SchedulePage() {
                       <Badge variant="outline" className="text-slate-300 border-slate-600 text-xl">
                         {game.sport}
                       </Badge>
-                      <Button variant="outline" size="sm" className="border-slate-700 text-slate-300 text-xl hover:text-white">
+
+        <Dialog>
+          <DialogTrigger asChild>
+		    <Button variant="outline" size="sm" className="border-slate-700 cursor-pointer text-slate-300 text-xl hover:text-white">
                         Edit
                       </Button>
-                    </div>
+          </DialogTrigger>
+          <DialogContent className="bg-slate-900 border-slate-800 text-white">
+            <DialogHeader>
+              <DialogTitle>Edit Game Details</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Team 1</Label>
+                  <Input className="bg-slate-800 border-slate-700" placeholder="Select team" />
+                </div>
+                <div className="space-y-2">
+                  <Label>Team 2</Label>
+                  <Input className="bg-slate-800 border-slate-700" placeholder="Select team" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label>Sport</Label>
+                <Select>
+                  <SelectTrigger className="bg-slate-800 border-slate-700">
+                    <SelectValue placeholder="Select sport" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-slate-800 border-slate-700">
+                    <SelectItem value="basketball">Basketball</SelectItem>
+                    <SelectItem value="volleyball">Volleyball</SelectItem>
+                    <SelectItem value="football">Football</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Date</Label>
+                  <Input type="date" className="bg-slate-800 border-slate-700" />
+                </div>
+                <div className="space-y-2">
+                  <Label>Time</Label>
+                  <Input type="time" className="bg-slate-800 border-slate-700" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label>Venue</Label>
+                <Input className="bg-slate-800 border-slate-700" placeholder="Enter venue" />
+              </div>
+              <Button className="w-full cursor-pointer bg-purple-600 hover:bg-purple-700">
+		Save Details
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+                    
+		</div>
                   </div>
                 ))}
               </CardContent>

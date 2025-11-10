@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { Calendar, Plus, Filter } from 'lucide-react';
+import { Calendar, Plus, Filter, Trash2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -223,8 +223,44 @@ export function SchedulePage() {
             </div>
           </DialogContent>
         </Dialog>
-                    
-		</div>
+
+    <Dialog >
+        {/* Trigger Dialog */}
+        <DialogTrigger asChild>
+          <Button
+            variant="outline"
+            className="flex items-center justify-center w-8 h-8 cursor-pointer bg-red-600 hover:bg-red-700 text-white border border-slate-700"
+          >
+            <Trash2 className="text-lg" /> 
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="bg-slate-900 border-slate-800 text-white p-8">
+          <DialogHeader>
+            <DialogTitle>Are you sure you want to delete this game?</DialogTitle>
+          </DialogHeader>
+
+          <div className="flex space-x-4 mt-4">
+            {/* Yes Button */}
+            <Button
+              className="flex-1 cursor-pointer bg-red-600 hover:bg-red-700"
+            >
+              Yes, Delete
+            </Button>
+
+            {/* No Button */}
+            <Button
+              variant="outline"
+              className="flex-1 cursor-pointer bg-slate-700 hover:bg-slate-800 text-white"
+            >
+              No, Cancel
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+
+
+	    </div>
                   </div>
                 ))}
               </CardContent>

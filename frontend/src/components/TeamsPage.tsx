@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent } from './ui/card';
-import { Users, Volleyball, ChevronLeft, UserPlus, Plus, Trash2 } from 'lucide-react';
+import { Users, Volleyball, ChevronLeft, UserPlus, Plus, Trash2, Dribbble, Globe, Crown, Box, Table, Disc, Grid3x3, Zap  } from 'lucide-react';
+
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import {
@@ -14,18 +15,69 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 
 const initialSportsData = [
-  { id: "basketball", name: "Basketball", icon: Volleyball, teams: [
+  { id: "basketball_men", name: "Basketball Men", icon: Dribbble, teams: [
     { id: "team1", name: "Lakers", players: ["LeBron James", "Anthony Davis", "Russell Westbrook"] },
     { id: "team2", name: "Warriors", players: ["Stephen Curry", "Klay Thompson", "Draymond Green"] }
   ]},
-  { id: "football", name: "Football", icon: Volleyball, teams: [
+  { id: "soccer_mixed", name: "Soccer Mixed", icon: Globe, teams: [
     { id: "team1", name: "Patriots", players: ["Tom Brady", "Julian Edelman", "Rob Gronkowski"] },
     { id: "team2", name: "Packers", players: ["Aaron Rodgers", "Davante Adams", "Aaron Jones"] }
   ]},
-  { id: "volleyball", name: "Volleyball", icon: Volleyball, teams: [
+  { id: "volleyball_men", name: "Volleyball Men", icon: Volleyball, teams: [
     { id: "team1", name: "Beach Volleyballers", players: ["Player 1", "Player 2", "Player 3"] },
     { id: "team2", name: "Indoor Warriors", players: ["Player A", "Player B", "Player C"] }
-  ]}
+  ]},
+
+    
+  { id: "volleyball_women", name: "Volleyball Women", icon: Volleyball, teams: [
+    { id: "team1", name: "Beach Volleyballers", players: ["Player 1", "Player 2", "Player 3"] },
+    { id: "team2", name: "Indoor Warriors", players: ["Player A", "Player B", "Player C"] }
+  ]},
+
+
+  { id: "basketball_women", name: "Basketball Women", icon: Dribbble, teams: [
+    { id: "team1", name: "Beach Volleyballers", players: ["Player 1", "Player 2", "Player 3"] },
+    { id: "team2", name: "Indoor Warriors", players: ["Player A", "Player B", "Player C"] }
+  ]},
+
+
+  { id: "rubiks", name: "Rubik's Cube", icon: Box, teams: [
+    { id: "team1", name: "Beach Volleyballers", players: ["Player 1", "Player 2", "Player 3"] },
+    { id: "team2", name: "Indoor Warriors", players: ["Player A", "Player B", "Player C"] }
+  ]},
+
+
+  { id: "chess", name: "Chess", icon: Crown, teams: [
+    { id: "team1", name: "Beach Volleyballers", players: ["Player 1", "Player 2", "Player 3"] },
+    { id: "team2", name: "Indoor Warriors", players: ["Player A", "Player B", "Player C"] }
+  ]},
+
+
+  { id: "table_tennis", name: "Table Tennis", icon: Table, teams: [
+    { id: "team1", name: "Beach Volleyballers", players: ["Player 1", "Player 2", "Player 3"] },
+    { id: "team2", name: "Indoor Warriors", players: ["Player A", "Player B", "Player C"] }
+  ]},
+
+
+  { id: "frisbee_mixed", name: "Frisbee Mixed", icon: Disc, teams: [
+    { id: "team1", name: "Beach Volleyballers", players: ["Player 1", "Player 2", "Player 3"] },
+    { id: "team2", name: "Indoor Warriors", players: ["Player A", "Player B", "Player C"] }
+  ]},
+
+
+  { id: "scrabble", name: "Scrabble", icon: Grid3x3, teams: [
+    { id: "team1", name: "Beach Volleyballers", players: ["Player 1", "Player 2", "Player 3"] },
+    { id: "team2", name: "Indoor Warriors", players: ["Player A", "Player B", "Player C"] }
+  ]},
+
+
+  { id: "esports", name: "E-Sports", icon: Zap, teams: [
+    { id: "team1", name: "Beach Volleyballers", players: ["Player 1", "Player 2", "Player 3"] },
+    { id: "team2", name: "Indoor Warriors", players: ["Player A", "Player B", "Player C"] }
+  ]},
+
+
+
 ];
 
 export function TeamsAndPlayers() {

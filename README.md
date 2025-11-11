@@ -1,6 +1,6 @@
 # 🏀 IskoArena Platform
 
-A modern, event-driven **sports management platform** built for universities and local leagues.  
+A modern, event-driven **sports management platform** built for UP Cebu Iskolaro (Intramurals).  
 It provides **real-time game updates, analytics, standings, and player data** across both **web (Admin)** and **mobile (Client)** applications — powered by **microservices**, **Kafka**, and **PostgreSQL**.
 
 ---

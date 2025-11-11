@@ -21,7 +21,7 @@ It provides **real-time game updates, analytics, standings, and player data** ac
 
 ## 🧭 Overview
 
-**IskoArena** is a modular platform that enables universities or organizations to manage sporting events efficiently.  
+**IskoArena** is a modular platform that enables UP Cebu Intramurals stakeholders to manage Iskolaro efficiently.  
 It supports:
 - Centralized **admin dashboards** for scheduling, analytics, and standings.
 - Real-time **mobile updates** for players, fans, and organizers.

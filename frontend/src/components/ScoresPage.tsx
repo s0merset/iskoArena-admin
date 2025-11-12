@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
@@ -7,12 +7,26 @@ import { Radio, Edit, CheckCircle } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Input } from './ui/input';
 
-const liveGames = [
+// ✅ Define a reusable Game type
+type Game = {
+  id: number;
+  team1: string;
+  team2: string;
+  score1: number;
+  score2: number;
+  sport: string;
+  quarter?: string;
+  set?: string;
+  timeLeft?: string;
+  status?: string;
+};
+
+const liveGames: Game[] = [
   { id: 1, team1: 'SocSci Stallions', score1: 78, team2: 'Golden Scions', score2: 72, sport: 'Basketball', quarter: 'Q4', timeLeft: '5:32' },
   { id: 2, team1: 'ArtsComm Phoenix', score1: 2, team2: 'Tycoons', score2: 2, sport: 'Volleyball', set: 'Set 3', timeLeft: 'Live' },
 ];
 
-const recentGames = [
+const recentGames: Game[] = [
   { id: 3, team1: 'Tycoons', score1: 78, team2: 'Golden Scions', score2: 72, sport: 'E-sports (DOTA 2)', status: 'final' },
   { id: 4, team1: 'ArtsComm Phoenix', score1: 3, team2: 'Tycoons', score2: 1, sport: 'Soccer Mixed', status: 'final' },
   { id: 5, team1: 'SocSci Stallions', score1: 21, team2: 'Tycoons', score2: 14, sport: 'Football', status: 'final' },
@@ -20,20 +34,14 @@ const recentGames = [
   { id: 7, team1: 'SocSci Stallions', score1: 17, team2: 'ArtsComm Phoenix', score2: 20, sport: 'Football', status: 'final' },
 ];
 
-const upcomingGames = [
-  { id: 8, team1: 'SocSci Stallions', team2: 'Tycoons', sport: 'Basketball', time: 'Today, 6:00 PM' },
-  { id: 9, team1: 'Golden Scions', team2: 'ArtsComm Phoenix', sport: 'Volleyball', time: 'Tomorrow, 2:00 PM' },
-  { id: 10, team1: 'Golden Scions', team2: 'SocSci Stallions', sport: 'Football', time: 'Tomorrow, 4:00 PM' },
-];
-
 export function ScoresPage() {
   const [selectedTab, setSelectedTab] = useState('live');
   const [isUpdateScoreOpen, setIsUpdateScoreOpen] = useState(false);
-  const [selectedGame, setSelectedGame] = useState(null);
+  const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [score1, setScore1] = useState('');
   const [score2, setScore2] = useState('');
 
-  const handleUpdateScore = (game) => {
+  const handleUpdateScore = (game: Game) => {
     setSelectedGame(game);
     setScore1(game.score1.toString());
     setScore2(game.score2.toString());

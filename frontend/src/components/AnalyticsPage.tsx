@@ -1,5 +1,19 @@
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  LineChart,
+  Line,
+  PieChart,
+  Pie,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
 import { TrendingUp, Users, Trophy, Activity } from 'lucide-react';
 
 const gamesPerWeek = [
@@ -44,9 +58,12 @@ const insightCards = [
 export function AnalyticsPage() {
   return (
     <div className="space-y-6">
+      {/* Header */}
       <div>
         <h1 className="text-white text-5xl mb-2">Analytics & Insights</h1>
-        <p className="text-slate-400 text-2xl">Track performance and trends across your league</p>
+        <p className="text-slate-400 text-2xl">
+          Track performance and trends across your league
+        </p>
       </div>
 
       {/* Insight Cards */}
@@ -72,11 +89,14 @@ export function AnalyticsPage() {
         })}
       </div>
 
+      {/* Charts Row 1 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Games Per Week */}
         <Card className="bg-slate-900/50 border-slate-800 backdrop-blur">
           <CardHeader>
-            <CardTitle className="text-white text-2xl">Games Scheduled Per Week</CardTitle>
+            <CardTitle className="text-white text-2xl">
+              Games Scheduled Per Week
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -84,13 +104,13 @@ export function AnalyticsPage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                 <XAxis dataKey="week" stroke="#94a3b8" />
                 <YAxis stroke="#94a3b8" />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: '#1e293b', 
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: '#1e293b',
                     border: '1px solid #334155',
                     borderRadius: '8px',
-                    color: '#fff'
-                  }} 
+                    color: '#fff',
+                  }}
                 />
                 <Bar dataKey="games" fill="#8b5cf6" radius={[8, 8, 0, 0]} />
               </BarChart>
@@ -109,21 +129,28 @@ export function AnalyticsPage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                 <XAxis dataKey="week" stroke="#94a3b8" />
                 <YAxis stroke="#94a3b8" />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: '#1e293b', 
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: '#1e293b',
                     border: '1px solid #334155',
                     borderRadius: '8px',
-                    color: '#fff'
-                  }} 
+                    color: '#fff',
+                  }}
                 />
-                <Line type="monotone" dataKey="attendance" stroke="#8b5cf6" strokeWidth={3} dot={{ fill: '#8b5cf6', r: 6 }} />
+                <Line
+                  type="monotone"
+                  dataKey="attendance"
+                  stroke="#8b5cf6"
+                  strokeWidth={3}
+                  dot={{ fill: '#8b5cf6', r: 6 }}
+                />
               </LineChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
       </div>
 
+      {/* Charts Row 2 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Sport Distribution */}
         <Card className="bg-slate-900/50 border-slate-800 backdrop-blur">
@@ -139,7 +166,12 @@ export function AnalyticsPage() {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                    // ✅ Type-safe label fix
+                    label={(props: any) =>
+                      props.name && typeof props.percent === 'number'
+                        ? `${props.name} ${(props.percent * 100).toFixed(0)}%`
+                        : ''
+                    }
                     outerRadius={100}
                     fill="#8884d8"
                     dataKey="value"
@@ -148,21 +180,25 @@ export function AnalyticsPage() {
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
                   </Pie>
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: '#1e293b', 
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: '#1e293b',
                       border: '1px solid #334155',
                       borderRadius: '8px',
-                      color: '#fff'
-                    }} 
+                      color: '#fff',
+                    }}
                   />
                 </PieChart>
               </ResponsiveContainer>
             </div>
+
             <div className="flex justify-center gap-6 mt-4">
               {sportDistribution.map((sport) => (
                 <div key={sport.name} className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: sport.color }} />
+                  <div
+                    className="w-3 h-3 rounded-full"
+                    style={{ backgroundColor: sport.color }}
+                  />
                   <span className="text-slate-300 text-xl">{sport.name}</span>
                 </div>
               ))}
@@ -181,13 +217,13 @@ export function AnalyticsPage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                 <XAxis type="number" stroke="#94a3b8" />
                 <YAxis dataKey="team" type="category" stroke="#94a3b8" />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: '#1e293b', 
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: '#1e293b',
                     border: '1px solid #334155',
                     borderRadius: '8px',
-                    color: '#fff'
-                  }} 
+                    color: '#fff',
+                  }}
                 />
                 <Legend />
                 <Bar dataKey="wins" fill="#10b981" radius={[0, 8, 8, 0]} />
@@ -200,3 +236,4 @@ export function AnalyticsPage() {
     </div>
   );
 }
+

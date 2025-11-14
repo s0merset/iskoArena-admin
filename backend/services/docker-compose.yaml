@@ -1,0 +1,109 @@
+version: '3.8'
+
+services:
+  postgres-auth:
+    image: postgres:15-alpine
+    container_name: postgres_auth_db
+    environment:
+      POSTGRES_USER: auth_user
+      POSTGRES_PASSWORD: auth_pass123
+      POSTGRES_DB: auth_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_auth_data:/var/lib/postgresql/data
+      - ./init-auth-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - microservices_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U auth_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres-users:
+    image: postgres:15-alpine
+    container_name: postgres_users_db
+    environment:
+      POSTGRES_USER: users_user
+      POSTGRES_PASSWORD: users_pass123
+      POSTGRES_DB: users_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_users_data:/var/lib/postgresql/data
+      - ./init-users-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - microservices_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U users_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  auth-service:
+    build:
+      context: ./services/auth
+      dockerfile: Dockerfile
+    container_name: auth_service
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DB_HOST: postgres-auth
+      DB_PORT: 5432
+      DB_USER: auth_user
+      DB_PASSWORD: auth_pass123
+      DB_NAME: auth_db
+      USERS_DB_HOST: postgres-users
+      USERS_DB_PORT: 5432
+      USERS_DB_USER: users_user
+      USERS_DB_PASSWORD: users_pass123
+      USERS_DB_NAME: users_db
+      JWT_SECRET: 
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres-auth:
+        condition: service_healthy
+      postgres-users:
+        condition: service_healthy
+    networks:
+      - microservices_network
+    volumes:
+      - ./services/auth:/app
+      - /app/node_modules
+    command: npm run dev
+
+  users-service:
+    build:
+      context: ./services/users
+      dockerfile: Dockerfile
+    container_name: users_service
+    environment:
+      NODE_ENV: development
+      PORT: 3002
+      DB_HOST: postgres-users
+      DB_PORT: 5432
+      DB_USER: users_user
+      DB_PASSWORD: users_pass123
+      DB_NAME: users_db
+      JWT_SECRET: your-super-secret-jwt-key-change-in-production
+    ports:
+      - "3002:3002"
+    depends_on:
+      postgres-users:
+        condition: service_healthy
+    networks:
+      - microservices_network
+    volumes:
+      - ./services/users:/app
+      - /app/node_modules
+    command: npm run dev
+
+volumes:
+  postgres_auth_data:
+  postgres_users_data:
+
+networks:
+  microservices_network:
+    driver: bridge

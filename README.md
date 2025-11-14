@@ -1,11 +1,11 @@
-# 🏀 IskoArena Platform
+#  IskoArena Platform
 
 A modern, event-driven **sports management platform** built for UP Cebu Iskolaro (Intramurals).  
 It provides **real-time game updates, analytics, standings, and player data** across both **web (Admin)** and **mobile (Client)** applications — powered by **microservices**, **Kafka**, and **PostgreSQL**.
 
 ---
 
-## 📘 Table of Contents
+##  Table of Contents
 - [Overview](#overview)
 - [Architecture](#architecture)
 - [Tech Stack](#tech-stack)
@@ -19,7 +19,7 @@ It provides **real-time game updates, analytics, standings, and player data** ac
 
 ---
 
-## 🧭 Overview
+##  Overview
 
 **IskoArena** is a modular platform that enables UP Cebu Intramurals stakeholders to manage Iskolaro efficiently.  
 It supports:
@@ -29,7 +29,7 @@ It supports:
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ![IskoArena Architecture](./9934a621-a009-41f6-a680-c3341fe9f8f1.png)
 
@@ -71,7 +71,7 @@ A **Kafka message broker** handles asynchronous communication between admin and 
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|-------------|
@@ -86,29 +86,29 @@ A **Kafka message broker** handles asynchronous communication between admin and 
 
 ---
 
-## ⭐ Core Features
+##  Core Features
 
 ### Admin Portal
-- 🗓 Game scheduling & management  
-- 📊 KPI dashboards (attendance, performance trends, leaderboards)  
-- ⚡ Live score updates  
-- 👥 Player & team management  
+-  Game scheduling & management  
+-  KPI dashboards (attendance, performance trends, leaderboards)  
+-  Live score updates  
+-  Player & team management  
 
 ### Mobile App
-- 🔔 Real-time notifications  
-- 🏆 Live standings & scores  
-- 📅 Upcoming matches view  
+-  Real-time notifications  
+-  Live standings & scores  
+-  Upcoming matches view  
 
 ### Analytics & Insights
-- 📈 Most active day  
-- 👥 Peak attendance  
-- ⏱ Average game duration  
-- 🏅 Championship tracking  
-- ⚖️ Wins vs. losses visualization  
+-  Most active day  
+-  Peak attendance  
+-  Average game duration  
+-  Championship tracking  
+-  Wins vs. losses visualization  
 
 ---
 
-## 🔄 Data Flow
+##  Data Flow
 
 1. **Admin UI** pushes updates → API Gateway → Admin Microservices.  
 2. **Microservices** publish updates to **Kafka topics** (`games_schedules`, `live_scores`, `updates`).  
@@ -117,9 +117,9 @@ A **Kafka message broker** handles asynchronous communication between admin and 
 
 ---
 
-## 🧑‍💻 Setup & Installation
+##  Setup & Installation
 
-### 1️⃣ Clone the Repository
+###  Clone the Repository
 ```bash
 git clone https://github.com/<your-username>/iskoArena.git
 cd iskoArena-admin
